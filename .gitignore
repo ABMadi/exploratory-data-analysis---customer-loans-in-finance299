@@ -1,6 +1,5 @@
 # Ignore data files
 /data/raw/
-/data/processed/
 
 # Ignore Python cache files
 __pycache__/
