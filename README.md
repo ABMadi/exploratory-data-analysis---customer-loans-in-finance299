@@ -1,37 +1,94 @@
 # Loan Portfolio EDA and Analysis
 
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Installation Instructions](#installation-instructions)
+- [Usage Instructions](#usage-instructions)
+- [File Structure](#file-structure)
+- [Data Cleaning Steps](#data-cleaning-steps)
+- [License](#license)
+
 ## Project Overview
-This project is focused on performing exploratory data analysis (EDA) and subsequent analysis on a loan portfolio dataset for a financial institution. The aim is to gain insights into loan approval, risk management, and profitability by understanding patterns, relationships, and anomalies in the data.
+This project focuses on conducting an exploratory data analysis (EDA) of a loan portfolio dataset. The goal is to help a financial institution make more informed decisions regarding loan approvals, risk management, and profitability. The analysis includes various data cleaning steps to prepare the data for meaningful insights.
 
-## Folder Structure
-The project is organised as follows:
+### Aim of the Project:
+- Clean the loan portfolio data to ensure accurate and reliable analysis.
+- Explore relationships and patterns within the data.
+- Build a foundation for further analysis and model-building.
 
-- **data/**
-  - `raw/`: Contains the original dataset in its raw form.
-  - `processed/`: Contains cleaned datasets ready for analysis.
+### What I Learned:
+- How to handle missing data and ensure data quality.
+- How to identify and remove outliers to improve data accuracy.
+- Techniques for reducing skewness and handling highly correlated columns to prevent multicollinearity.
   
-- **02_Data_Cleaning/scripts/**
-  - Contains Python scripts used for data transformation and cleaning tasks.
-  
-- **02_Data_Cleaning/visualisations/**
-  - Contains plots and visualisations generated during the EDA and data cleaning stages.
+## Installation Instructions
+To set up this project on your local machine, follow these steps:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/ABMadi/exploratory-data-analysis---customer-loans-in-finance299.git
 
-## Data Preparation
+2. **Navigate to the project directory**:
+  cd exploratory-data-analysis---customer-loans-in-finance299
 
-### NULL Value Handling
-During data preparation, the following steps were taken to handle missing values:
-- Columns with more than **50% missing values** were dropped.
-- **Numeric columns**: Missing values were imputed using the **median**.
-- **Categorical columns**: Missing values were imputed using the **mode**.
+3. **Install required dependencies: You'll need Python and the following libraries**:
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scipy
 
-The following datasets were generated as part of this process:
-- `loan_payments_data_v2_null_imputation.csv`: This file contains the cleaned dataset after handling missing values.
-- `loan_payments_data_milestone_4_ready.csv`: A cleaned version of the dataset, ready for further analysis in Milestone 4.
+You can install the dependencies using:
+    
+    pip install -r requirements.txt
 
-### Visualisations
-We generated visualisations to understand the distribution of NULL values:
-- `null_values_before_cleaning.png`: Displays the NULL values in the dataset before any cleaning or imputation.
-- `null_values_after_cleaning.png`: Displays the remaining NULL values (if any) after cleaning and imputation.
+## Usage Instructions
+1. Ensure that your environment is set up with the necessary dependencies.
 
-## Next Steps
-The next milestone will involve performing more in-depth EDA tasks and analysis on the cleaned dataset. We will focus on deriving insights from the loan data, which can assist in making better loan approval decisions and risk management.
+2. Run the Python scripts in the 02_Data_Cleaning/scripts/ folder sequentially to process the data.
+
+    Each script corresponds to a specific data cleaning step, such as handling null values, outliers, and correlated columns.
+
+3. The final cleaned dataset will be saved in the data/processed/ folder.
+
+## File Structure
+Finance_Project/
+│
+├── 02_Data_Cleaning/
+│   ├── scripts/
+│   │   ├── 01_data_correction_formats.py
+│   │   ├── 02_null_value_transformation.py
+│   │   ├── 03_identifying_visualising_skewed_columns.py
+│   │   ├── 04_test_transform_skewed_columns.py
+│   │   ├── 05_apply_transform_skewed_columns.py
+│   │   ├── 06_handle_outliers.py
+│   │   ├── 07_revisualise_after_outliers.py
+│   │   ├── 08_handle_correlated_columns.py
+│   ├── visualisations/
+│   │   ├── null_values_before_cleaning.png
+│   │   ├── skewed_columns_before.png
+│   │   ├── skewed_columns_after.png
+│   │   ├── outliers_boxplots_before.png
+│   │   ├── outliers_boxplots_after.png
+│   │   ├── correlation_matrix.png
+│   ├── processed/
+│   │   ├── loan_payments_data_v1_formats_corrected.csv
+│   │   ├── loan_payments_data_v2_null_imputation.csv
+│   │   ├── loan_payments_data_v3_skewness_corrected.csv
+│   │   ├── loan_payments_data_v4_outliers_handled.csv
+│   │   ├── loan_payments_data_v5_correlated_columns_removed.csv
+│
+└── README.md
+
+## Data Cleaning Steps
+1. **Corrected Formats**: Converted columns to appropriate data types and ensured dates and numerical values were in the correct format.
+
+2. **Handled Missing Values**: Imputed missing values using median and mode imputation techniques.
+
+3. **Reduced Skewness**: Applied Box-Cox transformations to skewed columns to normalise data distributions.
+
+4. **Removed Outliers**: Identified and removed or capped extreme outliers using the IQR method.
+
+5. **Handled Correlated Columns**: Identified highly correlated columns and removed the redundant ones to reduce multicollinearity.
+
+## License
+This project is licensed under the MIT License.
