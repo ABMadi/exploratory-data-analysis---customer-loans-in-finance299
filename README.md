@@ -59,6 +59,7 @@ You can install the dependencies using:
 4. The final cleaned dataset and analysis visualizations will be saved in the 01_Results/ folder.
 
 ## File Structure
+```
 Finance_Project/
 ├── 01_Results/
 │   ├── Comparison_Results/
@@ -67,6 +68,8 @@ Finance_Project/
 │   │   ├── dti_comparison.png
 │   │   ├── out_prncp_comparison.png
 │   │   ├── total_payment_comparison.png
+│   ├── results/
+│   │   ├── Loan_Default_Risk_Indicators.pdf
 ├── 02_Data_Cleaning/
 │   ├── scripts/
 │   │   ├── 01_data_correction_formats.py
@@ -86,6 +89,7 @@ Finance_Project/
 │   │   ├── 05_analyze_default_indicators.py
 │   │   ├── 06_visualize_default_indicators.py
 │   ├── visualisations/
+```
 
 ## Data Cleaning Steps
 1. **Corrected Formats**: Converted columns to appropriate data types and ensured dates and numerical values were in the correct format.
